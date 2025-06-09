@@ -1,7 +1,18 @@
-***** Homewords
+#💬 Real-Time Chat App using Socket.IO
+A simple real-time chat application built using Node.js, Express, and Socket.IO. Users can join a common chat room and send messages instantly.
 
-- Infinite scroll pagination for other users // infinite-react-scroll
-- Infinite scroll pagination for messages
-- clear data on page unmount and logout (cleanup)
-- implement loaders (screenloaders and buttonloaders)
-- Profile page (Edit Profile);
+⚙️ Features
+Real-time messaging with WebSockets
+
+Simple UI with chatroom interface
+
+Broadcasts user join/leave notifications
+
+Built with Socket.IO for both frontend and backend
+
+🧱 Tech Stack
+Frontend: HTML, CSS, JavaScript, React
+
+Backend: Node.js, Express, jwt, MongoDB
+
+WebSocket: Socket.IO

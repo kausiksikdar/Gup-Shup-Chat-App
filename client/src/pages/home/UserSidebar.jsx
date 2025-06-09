@@ -22,15 +22,14 @@ const UserSidebar = () => {
       setUsers(otherUsers);
     } else {
       setUsers(
-        otherUsers.filter((user) => {
-          return (
-            user.username.toLowerCase().includes(searchValue.toLowerCase()) ||
-            user.fullName
-              .toLowerCase()
-              .includes(searchValue.toLocaleLowerCase())
-          );
-        })
-      );
+  otherUsers.filter((user) => {
+    const username = user?.username?.toLowerCase() || "";
+    const fullName = user?.fullName?.toLowerCase() || "";
+    const query = searchValue.toLowerCase();
+
+    return username.includes(query) || fullName.includes(query);
+  })
+);
     }
   }, [searchValue, otherUsers]);
 
