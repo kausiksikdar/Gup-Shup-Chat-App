@@ -87,3 +87,19 @@ export const getOtherUsersThunk = createAsyncThunk(
     }
   }
 );
+
+export const updateProfileThunk = createAsyncThunk(
+  "user/updateProfile",
+  async (formData, { rejectWithValue }) => {
+    try {
+      const response = await axiosInstance.put("/user/update", formData, {
+        withCredentials: true,
+      });
+      return response.data; // Ensure your backend returns the updated user
+    } catch (error) {
+      console.error(error);
+      const errorOutput = error?.response?.data?.errMessage || "Profile update failed";
+      return rejectWithValue(errorOutput);
+    }
+  }
+);

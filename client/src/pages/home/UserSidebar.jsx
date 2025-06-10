@@ -72,7 +72,7 @@ const UserSidebar = () => {
           </div>
           <h2>{userProfile?.username}</h2>
         </div>
-
+        
         <button onClick={handleLogout} className="btn btn-primary btn-sm px-4">
           Logout
         </button>

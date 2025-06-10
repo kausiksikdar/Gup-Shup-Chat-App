@@ -9,6 +9,7 @@ import { store } from "./store/store.js";
 import { Provider } from "react-redux";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 
+
 const router = createBrowserRouter([
   {
     path: "/",

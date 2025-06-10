@@ -5,6 +5,7 @@ import {
   loginUserThunk,
   logoutUserThunk,
   registerUserThunk,
+  updateProfileThunk,
 } from "./user.thunk";
 
 const initialState = {
@@ -92,6 +93,19 @@ export const userSlice = createSlice({
     builder.addCase(getOtherUsersThunk.rejected, (state, action) => {
       state.screenLoading = false;
     });
+
+    // update profile
+builder.addCase(updateProfileThunk.pending, (state) => {
+  state.buttonLoading = true;
+});
+builder.addCase(updateProfileThunk.fulfilled, (state, action) => {
+  state.userProfile = action.payload?.user || action.payload; // Adjust if your backend sends updated user as `user`
+  state.buttonLoading = false;
+});
+builder.addCase(updateProfileThunk.rejected, (state) => {
+  state.buttonLoading = false;
+});
+
   },
 });
 
